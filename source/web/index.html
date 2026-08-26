@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MRX Nexus Loading Screen</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <video id="backgroundVideo" class="background-video" autoplay muted loop playsinline></video>
+  <div class="background-overlay"></div>
+  <div class="orb orb-one"></div><div class="orb orb-two"></div><div class="grid"></div><div id="particles"></div>
+
+  <main class="app-shell">
+    <header class="topbar glass">
+      <div class="brand-mini"><img id="miniLogo" alt="Logo"><div><strong id="miniName"></strong><span>BUILD DIFFERENT</span></div></div>
+      <nav id="navigation"></nav>
+      <div class="server-pill"><span class="pulse"></span><span id="serverStatus">SERVER ONLINE</span></div>
+    </header>
+
+    <section id="pages" class="pages">
+      <article class="page active" data-page="home">
+        <div class="hero-copy">
+          <div class="eyebrow" id="eyebrow"></div>
+          <h1 id="serverName"></h1>
+          <h2 id="tagline"></h2>
+          <p id="description"></p>
+          <div class="hero-badges"><span>PREMIUM ROLEPLAY</span><span>HIGH PERFORMANCE</span><span>CUSTOM SYSTEMS</span></div>
+          <div class="quick-links"><button id="copyDiscord">COPY DISCORD</button><button id="copyWebsite" class="secondary">COPY WEBSITE</button></div>
+        </div>
+        <div class="hero-logo-wrap"><div class="logo-ring"></div><img id="heroLogo" alt="Server logo"><div class="logo-glow"></div></div>
+      </article>
+
+      <article class="page" data-page="rules"><div class="section-heading"><span>SERVER GUIDELINES</span><h2>RULES</h2><p>Know the rules before entering the city.</p></div><div id="rulesGrid" class="rules-grid"></div></article>
+      <article class="page" data-page="team"><div class="section-heading"><span>BEHIND THE CITY</span><h2>MEET THE TEAM</h2><p>The people building and protecting the experience.</p></div><div id="teamGrid" class="team-grid"></div></article>
+      <article class="page" data-page="gallery"><div class="section-heading"><span>COMMUNITY MOMENTS</span><h2>GALLERY</h2><p>Highlights from Haitian RP.</p></div><div class="gallery-stage glass"><button id="galleryPrev" class="arrow">‹</button><div class="gallery-image-wrap"><img id="galleryImage"><div class="gallery-caption"><strong id="galleryTitle"></strong><span id="galleryCaption"></span></div></div><button id="galleryNext" class="arrow">›</button></div><div id="galleryDots" class="gallery-dots"></div></article>
+      <article class="page" data-page="events"><div class="section-heading"><span>WHAT'S NEXT</span><h2>EVENTS</h2><p>Stay ready for upcoming community activities.</p></div><div id="eventsGrid" class="events-grid"></div></article>
+    </section>
+
+    <footer class="bottom-panel">
+      <div class="music-player glass">
+        <img id="musicCover" alt="Cover"><div class="track-meta"><strong id="musicTitle">No music configured</strong><span id="musicArtist">MRX Nexus</span></div>
+        <button id="prevTrack">⏮</button><button id="playPause" class="play">▶</button><button id="nextTrack">⏭</button>
+        <div class="time"><span id="currentTime">0:00</span><div id="seekBar" class="seek"><div id="seekFill"></div></div><span id="duration">0:00</span></div>
+        <button id="muteButton">🔊</button><input id="volume" type="range" min="0" max="1" step="0.01">
+      </div>
+
+      <div class="loading-panel glass">
+        <div class="loading-row"><span id="loadingText">CONNECTING TO SERVER</span><strong id="loadingPercent">0%</strong></div>
+        <div class="loading-track"><div id="loadingFill"></div><div class="loading-glow"></div></div>
+        <div class="loading-bottom"><span id="loadingStage">Preparing connection...</span><span id="tipText"></span></div>
+      </div>
+    </footer>
+  </main>
+
+  <audio id="audio"></audio>
+  <script src="assets/settings/config.js"></script>
+  <script src="assets/settings/rules.js"></script>
+  <script src="assets/settings/team.js"></script>
+  <script src="assets/settings/gallery.js"></script>
+  <script src="assets/settings/events.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

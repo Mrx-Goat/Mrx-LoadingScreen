@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>MRX Loading Screen</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="scene" aria-hidden="true">
+    <div class="aurora a"></div><div class="aurora b"></div><div class="grid"></div>
+    <div class="city"></div><div id="particles"></div><div class="vignette"></div>
+  </div>
+
+  <main class="shell">
+    <header>
+      <div class="brand"><div id="miniLogo" class="mark">MRX</div><div><strong id="serverMini">HAITIAN RP</strong><span>BUILD DIFFERENT</span></div></div>
+      <div class="status"><i></i><span>SERVER ONLINE</span><b id="playerCap">200 SLOTS</b></div>
+    </header>
+
+    <section class="hero">
+      <div class="copy">
+        <p id="label" class="eyebrow"></p>
+        <h1 id="serverName"></h1>
+        <h2 id="tagline"></h2>
+        <p id="description" class="description"></p>
+        <div class="actions"><button id="discordButton">JOIN DISCORD</button><button id="rulesButton" class="ghost">VIEW RULES</button></div>
+        <div id="featureGrid" class="features"></div>
+      </div>
+
+      <aside class="identity-card">
+        <div class="ring one"></div><div class="ring two"></div>
+        <div id="heroLogo" class="hero-mark">MRX</div>
+        <div class="identity-meta"><span>EST. 2026</span><b id="cardName"></b><small>PREMIUM ROLEPLAY EXPERIENCE</small></div>
+      </aside>
+    </section>
+
+    <section id="rulesPanel" class="rules-panel">
+      <div class="rules-head"><div><span>SERVER GUIDELINES</span><h3>ENTER PREPARED</h3></div><button id="closeRules">×</button></div>
+      <div id="rulesList"></div>
+    </section>
+
+    <footer>
+      <div class="radio glass">
+        <div class="cover">♫</div><div class="track"><small>NOW PLAYING</small><b id="trackTitle"></b><span id="trackArtist"></span></div>
+        <button id="playButton">▶</button><button id="muteButton">VOL</button><input id="volume" type="range" min="0" max="1" step=".01">
+      </div>
+      <div class="loader glass">
+        <div class="loader-top"><span id="stage">CONNECTING TO SERVER</span><b id="percent">0%</b></div>
+        <div class="bar"><div id="fill"></div><i></i></div>
+        <div class="loader-bottom"><span id="tip"></span><small>MRX-GOAT © 2026</small></div>
+      </div>
+    </footer>
+  </main>
+
+  <audio id="audio"></audio>
+  <script src="config.js"></script><script src="app.js"></script>
+</body>
+</html>

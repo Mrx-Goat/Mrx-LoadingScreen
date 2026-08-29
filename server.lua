@@ -1,0 +1,11 @@
+CreateThread(function()
+    Wait(200)
+    if not Config.PrintConsoleBanner then return end
+    print('^4 __  __ ____  __  __   _                    _ _             ^7')
+    print('^4|  \\/  |  _ \\ \\ \\/ /  | |    ___   __ _  __| (_)_ __   __ _ ^7')
+    print('^4| |\\/| | |_) | \\  /   | |   / _ \\ / _` |/ _` | | `_ \\ / _` |^7')
+    print('^4| |  | |  _ <  /  \\   | |__| (_) | (_| | (_| | | | | | (_| |^7')
+    print('^4|_|  |_|_| \\_\\/_/\\_\\  |_____\\___/ \\__,_|\\__,_|_|_| |_|\\__, |^7')
+    print('^4                                                    |___/ ^7')
+    print(('^3             %s v%s — %s^7'):format(Config.DisplayName, Config.Version, Config.Branding))
+end)

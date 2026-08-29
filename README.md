@@ -1,117 +1,136 @@
-# MRX Loading Screen v2
+# MRX Nexus Loading Screen
 
-Professional, lightweight, and fully configurable FiveM loading screen by **MRX-GOAT**.
+A premium, fully editable FiveM loading screen by **MRX-GOAT**.
 
 **Build Different.**
 
-## What it looks like
+## Preview and design
 
-The screen uses a dark luxury blue visual system with an animated cinematic city,
-perspective grid, aurora glow, floating particles, glass panels, rotating identity
-rings, server status, feature cards, rules drawer, music controls, live loading stages,
-tips, and a real FiveM progress bar. The design is created with HTML/CSS, so it still
-appears when no background video or remote website is available.
+MRX Nexus uses a luxury dark-blue glass interface over a cinematic WebM background.
+It includes animated lighting, particles, server branding, real FiveM loading progress,
+music controls, rotating tips, rules, staff profiles, a gallery, and upcoming events.
+The full original asset pack is included in this repository.
 
 ## Features
 
-- Real FiveM `loadProgress` integration
-- Lightweight code-native animated background
-- Responsive 16:9 and smaller-screen layout
-- Server name, description, tagline, slot count, Discord, colors, rules, features, tips
-- Optional custom logo and local MP3/OGG music
-- Copy Discord button
-- Rules drawer
-- Autoplay-safe music controls and volume
-- Automatic shutdown after player spawn
-- Smooth fade into the game
-- MRX-GOAT console banner
-- No framework required: works with Qbox, QBCore, ESX, or standalone servers
+- Cinematic WebM background video
+- Custom logo and server branding
+- Home, Rules, Team, Gallery, and Events pages
+- Real FiveM loading progress and loading stages
+- Two included music tracks with covers and player controls
+- Four included staff avatar placeholders
+- Three gallery images and two event posters
+- Configurable server information, Discord, website, colors, and tips
+- Automatic shutdown after the player spawns
+- Responsive layout
+- Qbox, QBCore, ESX, and standalone compatible
+- No framework dependency
 
 ## Installation
 
-1. Download the repository using **Code → Download ZIP**.
-2. Extract it into your FiveM server `resources` folder.
-3. Rename the extracted folder to exactly:
-
-```text
-mrx-loading-screen
-```
-
-4. Add this to `server.cfg`:
+1. Select **Code → Download ZIP** on this GitHub repository.
+2. Extract the archive.
+3. Rename the extracted folder to exactly `mrx-nexus-loadscreen`.
+4. Move it into your FiveM server `resources` folder.
+5. Add this line to `server.cfg`:
 
 ```cfg
-ensure mrx-loading-screen
+ensure mrx-nexus-loadscreen
 ```
 
-5. Restart the server or run:
+6. Restart the server, or run:
 
 ```text
 refresh
-ensure mrx-loading-screen
+ensure mrx-nexus-loadscreen
 ```
 
-6. Join the server to test it. A loading screen is not fully testable by opening the
-HTML file alone because FiveM sends the real loading progress events.
+7. Join the server to test the real loading progress.
+
+Correct structure:
+
+```text
+resources/
+└── mrx-nexus-loadscreen/
+    ├── fxmanifest.lua
+    ├── config.lua
+    ├── client.lua
+    ├── server.lua
+    └── web/
+```
+
+Do not leave a second nested folder between `mrx-nexus-loadscreen` and
+`fxmanifest.lua`. Disable every other loading-screen resource.
 
 ## Customization
 
-Edit only `web/config.js` for normal customization.
+Start with `web/assets/README_EDIT_HERE.txt`.
 
-### Server information
+Main server settings:
 
-```js
-server: {
-  name: 'HAITIAN RP',
-  tagline: 'NOUVO MOND. NOUVO FANMI.',
-  discord: 'https://discord.gg/YOURINVITE',
-  website: 'https://mrxgoat.com',
-  maxPlayers: 200
-}
+```text
+web/assets/settings/config.js
 ```
 
-### Colors
+This controls the server name, tagline, description, Discord, website, player count,
+colors, background, music playlist, navigation, and rotating tips.
 
-Change the values inside `theme` in `web/config.js`.
+Replace the logo and background while keeping the same filenames:
 
-### Logo
-
-1. Create `web/assets` if it is not present.
-2. Put your PNG/WebP logo inside it.
-3. Set:
-
-```js
-logo: 'assets/logo.png'
+```text
+web/assets/logo.png
+web/assets/background.webm
 ```
 
-If `logo` is empty, the built-in MRX text mark appears automatically.
+WebM/VP8 is recommended because FiveM CEF may not reliably play H.264 MP4 video.
 
-### Music
+Edit the content pages here:
 
-1. Put an `.mp3` or `.ogg` file inside `web/assets`.
-2. Edit the `music` section:
-
-```js
-music: {
-  autoplay: true,
-  volume: 0.22,
-  file: 'assets/music.mp3',
-  title: 'Song Name',
-  artist: 'Artist Name'
-}
+```text
+web/assets/settings/rules.js
+web/assets/settings/team.js
+web/assets/settings/gallery.js
+web/assets/settings/events.js
 ```
 
-Some players must click once before Chromium permits audio playback. The play button
-always remains available.
+Replace their images inside:
+
+```text
+web/assets/avatars/
+web/assets/gallery/
+web/assets/events/
+web/assets/music/
+```
+
+Customers normally do not need to edit `index.html`, `style.css`, or `script.js`.
+
+## Music behavior
+
+- Maximum three configured tracks
+- One track repeats automatically
+- Multiple tracks continue in order and return to track one
+- Optional shuffle mode
+- Play, pause, previous, next, seek, mute, and volume controls
 
 ## Troubleshooting
 
 - **Nothing appears:** confirm `fxmanifest.lua` is directly inside the resource folder.
-- **Wrong nested folder:** avoid `mrx-loading-screen/mrx-loading-screen/fxmanifest.lua`.
-- **Resource not found:** run `refresh` and use the exact folder name.
-- **Screen never closes:** keep `loadscreen_manual_shutdown 'yes'` and `client.lua` enabled.
-- **Music does not play:** use local MP3/OGG, confirm the path and click Play once.
-- **Progress stays in preview mode:** test inside FiveM, not a normal web browser.
+- **Resource not found:** run `refresh` and verify the exact folder name.
+- **Black background:** keep the video as WebM/VP8 and verify its path in `config.js`.
+- **Music does not autoplay:** click once; Chromium may block autoplay.
+- **Screen does not close:** do not remove `client.lua` or manual shutdown settings.
+- **Missing images:** asset paths are case-sensitive.
+- **Browser preview:** real loading progress only appears inside FiveM.
+
+## Performance
+
+Use optimized WebM video, compressed WebP/JPG/PNG images, and compressed audio. Large
+media files increase download time for new players.
+
+## Version
+
+**v1.1.0 — Original full asset edition**
 
 ## License
 
-Copyright © 2026 MRX-GOAT. See [LICENSE](LICENSE).
+Released under the [MIT License](LICENSE).

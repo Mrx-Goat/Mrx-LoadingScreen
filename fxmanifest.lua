@@ -1,10 +1,10 @@
 fx_version 'cerulean'
 game 'gta5'
 
-name 'mrx-loading-screen'
+name 'mrx-nexus-loadscreen'
 author 'MRX-GOAT'
-description 'Professional configurable FiveM loading screen — Build Different'
-version '2.0.0'
+description 'Premium editable FiveM loading screen - Build Different'
+version '1.1.0'
 
 lua54 'yes'
 
@@ -19,7 +19,6 @@ server_script 'server.lua'
 files {
     'web/index.html',
     'web/style.css',
-    'web/config.js',
-    'web/app.js',
+    'web/script.js',
     'web/assets/**/*'
 }

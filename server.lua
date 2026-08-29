@@ -1,11 +1,15 @@
+local resource = GetCurrentResourceName()
+
 CreateThread(function()
-    Wait(200)
+    Wait(250)
     if not Config.PrintConsoleBanner then return end
-    print('^4 __  __ ____  __  __   _                    _ _             ^7')
-    print('^4|  \\/  |  _ \\ \\ \\/ /  | |    ___   __ _  __| (_)_ __   __ _ ^7')
-    print('^4| |\\/| | |_) | \\  /   | |   / _ \\ / _` |/ _` | | `_ \\ / _` |^7')
-    print('^4| |  | |  _ <  /  \\   | |__| (_) | (_| | (_| | | | | | (_| |^7')
-    print('^4|_|  |_|_| \\_\\/_/\\_\\  |_____\\___/ \\__,_|\\__,_|_|_| |_|\\__, |^7')
-    print('^4                                                    |___/ ^7')
-    print(('^3             %s v%s — %s^7'):format(Config.DisplayName, Config.Version, Config.Branding))
+
+    print('^5============================================================^7')
+    print(('^4[%s]^7 READY'):format(Config.ResourceDisplayName))
+    print(('^3Resource:^7 %s'):format(resource))
+    print(('^3Developer:^7 %s'):format(Config.Author))
+    print(('^3Discord:^7 %s'):format(Config.Discord))
+    print(('^3Latest Version:^7 v%s'):format(Config.Version))
+    print(('^3Brand:^7 %s'):format(Config.Branding))
+    print('^5============================================================^7')
 end)

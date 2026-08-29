@@ -1,9 +1,10 @@
 Config = {}
 
-Config.DisplayName = 'MRX Loading Screen'
-Config.Version = '2.0.0'
+Config.ResourceDisplayName = 'MRX Nexus Loading Screen'
+Config.Version = '1.1.0'
 Config.Author = 'MRX-GOAT'
-Config.Branding = 'BUILD DIFFERENT'
+Config.Discord = 'discord.gg/YOURINVITE'
+Config.Branding = 'Build Different'
 Config.PrintConsoleBanner = true
 Config.AutoShutdownOnSpawn = true
 Config.FadeOnJoin = true
